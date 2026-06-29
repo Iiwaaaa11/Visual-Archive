@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+  --background: #0a0a0a;
+  --background-soft: #111111;
+  --foreground: #f2f0ea;
+  --muted: #9a9a9a;
+  --border: rgba(255, 255, 255, 0.18);
+  --page-padding: clamp(20px, 4vw, 64px);
+  --font-primary: 'DM Sans', sans-serif;
+  --font-secondary: 'Manrope', sans-serif;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.section-label {
+  color: var(--muted);
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.page-section {
+  position: relative;
+  padding-inline: var(--page-padding);
+}
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--foreground);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.button-link span {
+  transition: transform 300ms ease;
+}
+
+.button-link:hover span {
+  transform: translateX(6px);
+}
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [data-cursor] {
+    cursor: none;
+  }
+}
